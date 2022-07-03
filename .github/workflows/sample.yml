@@ -13,14 +13,14 @@ jobs:
     runs-on: self-hosted
   steps:
     - name: Rename file 
-    run: |
-      BRANCH=$(echo $GITHUB_REF | cut -d / -f 3)
-      if [[ $BRANCH == "main" ]]; then
-      rm -f file.txt
+      run: |
+        BRANCH=$(echo $GITHUB_REF | cut -d / -f 3)
+        if [[ $BRANCH == "main" ]]; then
+        rm -f file.txt
           
           
-      elif [[ $BRANCH == "production" ]]; then
-      mv oldfile.txt newfile.txt
+        elif [[ $BRANCH == "production" ]]; then
+        mv oldfile.txt newfile.txt
           
-      elif [[ $BRANCH == "preproduction" ]]; then
-      mv oldfile.txt preprod.txt
+        elif [[ $BRANCH == "preproduction" ]]; then
+        mv oldfile.txt preprod.txt
