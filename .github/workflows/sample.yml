@@ -16,11 +16,13 @@ jobs:
       run: |
         BRANCH=$(echo $GITHUB_REF | cut -d / -f 3)
         if [[ $BRANCH == "main" ]]; then
-        rm -f file.txt
+          rm -f file.txt
           
           
         elif [[ $BRANCH == "production" ]]; then
-        mv oldfile.txt newfile.txt
+          mv oldfile.txt newfile.txt
           
         elif [[ $BRANCH == "preproduction" ]]; then
-        mv oldfile.txt preprod.txt
+         mv oldfile.txt preprod.txt
+         
+       fi
